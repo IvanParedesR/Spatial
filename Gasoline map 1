@@ -49,3 +49,8 @@ server <- function(input, output, session) {
 }
 #lanzar la aplicación
 shinyApp(ui, server)
+
+#medir la distancias
+library(geosphere)
+
+disTAR <- distm(c(gasolineras$longitud, gasolineras$latitud), c(lon = -99.84708, lat = 16.84064), fun = distHaversine)
